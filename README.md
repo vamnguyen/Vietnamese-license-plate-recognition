@@ -27,7 +27,8 @@ This project aims to build a web application for recognizing Vietnamese license 
 
 ## Algorithm
 
-<img width="685" alt="image" src="https://github.com/cnmeow/Vietnamese-license-plate-recognition/assets/73975520/6fd72e6c-8650-4c78-8ec0-c0f96046954d">
+<img width="685" height="319" alt="algo-license-plate-detection" src="https://github.com/user-attachments/assets/9ffcfe8b-c06b-4487-b74d-faf7a6d0abe4" />
+
 
 ## Installation
 
