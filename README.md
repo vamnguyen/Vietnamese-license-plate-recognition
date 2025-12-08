@@ -1,4 +1,4 @@
-# 🇻🇳 Vietnamese License Plate Recognition - CS117.O21.KHTN
+# 🇻🇳 Vietnamese License Plate Recognition - CS406.Q11
 
 ## Teacher Instruction
 
@@ -28,7 +28,6 @@ This project aims to build a web application for recognizing Vietnamese license 
 ## Algorithm
 
 <img width="685" height="319" alt="algo-license-plate-detection" src="https://github.com/user-attachments/assets/9ffcfe8b-c06b-4487-b74d-faf7a6d0abe4" />
-
 
 ## Installation
 
@@ -64,7 +63,7 @@ python main.py
   <img width="700" alt="index" src="https://github.com/cnmeow/Vietnamese-license-plate-recognition/assets/73975520/85e28ce8-180e-4211-a362-9058aa9d0f31">
 
 - Click `Choose File` button, select the image of the license plate you want to recognize
-- Click the `Upload and Recognize` button to process the recognition.
+- Click the `Recognize` button to process the recognition.
 
 ### On image
 

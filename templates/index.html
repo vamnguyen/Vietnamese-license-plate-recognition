@@ -3,223 +3,167 @@
   <head>
     <title>Vietnamese License Plate Recognition</title>
     <meta property="og:title" content="Vietnamese License Plate Recognition" />
-    <link rel="icon" href="static/uit.png" type="image/x-icon">
+    <meta
+      name="description"
+      content="AI-powered license plate recognition system for Vietnamese vehicles"
+    />
+    <link rel="icon" href="static/uit.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background-color: var(--dl-color-theme-neutral-light);
-
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/index.css" />
   </head>
   <body>
-    <link rel="stylesheet" href="static/style.css" />
-    <div>
-      <link href="static/index.css" rel="stylesheet" />
+    <div class="home-container">
+      <!-- Header -->
+      <header class="home-header">
+        <div class="home-container02">
+          <span class="home-txt-uni">
+            University Of Information Technology, VNU-HCM
+          </span>
+          <span class="home-txt-uni1">
+            CS406.Q11.KHTN - Xử lý ảnh và ứng dụng
+          </span>
+          <h1 class="home-text">Vietnamese License Plate Recognition</h1>
+          <span class="home-txt-uni2"> AI-Powered Smart Parking System </span>
+        </div>
+      </header>
 
-      <div class="home-container">
-        <div class="home-header">
-          <div class="home-container01">
-            <a href="https://uit.edu.vn/">
+      <!-- Main Content -->
+      <main class="home-main">
+        <!-- Upload Section -->
+        <div class="home-container11">
+          <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg,.jpeg,.png,.heic" />
+            <input type="submit" value="Recognize" class="home-button button" />
+          </form>
+        </div>
+
+        {% if error == None %}
+        <!-- Image Display Grid -->
+        <div class="home-container12">
+          <div class="home-container13">
+            <span class="home-text10">Input Image</span>
             <img
-              alt="image"
-              src="static/uit.png"
-              class="home-image"
+              alt="Uploaded license plate image"
+              src="static/upload.jpg"
+              class="home-pasted-image"
             />
-          </a>
           </div>
-          <div class="home-container02">
-            <span class="home-txt-uni">
-              University Of Information Technology, VNU-HCM
-            </span>
-            <span class="home-txt-uni1">
-              CS406.Q11.KHTN - Xử lý ảnh và ứng dụng
-            </span>
-            <h1 class="home-text">Vietnamese License Plate Recognition</h1>
-            <span class="home-txt-uni2">
-              Teacher Instruction: ThS. Cáp Phạm Đình Thăng
-            </span>
+          <div class="home-container14">
+            <span class="home-text11">Output Visualization</span>
+            <img
+              alt="Processed image with detection"
+              src="static/result.jpg"
+              class="home-pasted-image1"
+            />
           </div>
         </div>
-        <div class="home-team">
-          <div class="home-container03">
-            <span class="home-text01">Nguyễn Minh Lộc</span>
-            <span class="home-text02">22520791</span>
-          </div>
-          <div class="home-container05">
-            <span class="home-text03">Huỳnh Chấn Kiệt</span>
-            <span class="home-text04">22520717</span>
-          </div>
-          <div class="home-container07">
-            <span class="home-text05">Nguyễn Việt Anh Minh</span>
-            <span class="home-text06">22520880</span>
-          </div>
-        </div>
-        <div class="home-main">
-          <div class="home-container11">
-            <form method=post enctype=multipart/form-data>
-                <input type=file name=file>
-                <input type=submit value="Upload and Recognize" class="home-button button">
-              </form>
-          </div>
-          {% if error == None %}
-          <div class="home-container12">
-            <div class="home-container13">
-              <span class="home-text10">Input Image</span>
-              <img
-                alt="pastedImage"
-                src="static/upload.jpg"
-                class="home-pasted-image"
-              />
-            </div>
-            <div class="home-container14">
-              <span class="home-text11">Output Visualization</span>
-              <img
-                alt="pastedImage"
-                src="static/result.jpg"
-                class="home-pasted-image1"
-              />
-            </div>
-          </div>
-          <div class="home-container15">
-            <span class="home-text12">{{lp}}</span>
-            <span class="home-text13">Runtime: {{runtime}}  seconds</span>
-          </div>
-             
-          {% endif %}
-          {% if error %}
-          <div class="home-container15">
-            <span class="home-text12">{{error}}</span>
-          </div>
-          {% endif %}
-             
 
-          
+        <!-- Results Display -->
+        <div class="home-container15">
+          <span class="home-text12">{{lp}}</span>
+          <span class="home-text13">Runtime: {{runtime}} seconds</span>
         </div>
-        <div class="home-intro">
-          <div class="home-container16">
-            <h1 class="home-text14">
-              We develop a Vietnamese license plate recognition model for smart
-              parking systems
-            </h1>
-            <span class="home-text15">
-              The goal is to create an LPR system that accurately and quickly
-              recognizes vehicle license plates using high-resolution imaging
-              and advanced algorithms. This solution supports parking efficiency
-              by facilitating faster entry and exit processes, reducing wait
-              times, and minimizing human intervention.
-            </span>
-          </div>
-          <div class="home-container17">
-            <h1 class="home-text16">How to use</h1>
-            <span class="home-text17">
-              <span class="home-text18">1. Click "Choose File" button, select
-              the image of the license plate you want to recognize</span>
-              <br />
-              <span>2. Upload the image.</span>
-              <br />
-              <span>
-                3. Click the "Upload and Recognize" button to process the recognition.
-              </span>
-              <br />
-            </span>
-            <span class="home-text26">
-              You will receive the license plate content and processing time.
-            </br>Additionally, the website will display the image with a bounding
-              box around the license plate.
-            </span>
-          </div>
-          <div class="home-container18">
-            <h1 class="home-text27">Constraints</h1>
-            <span class="home-text28">
-              <span>
-                1. The image resolution is 1920x1080 (Full HD). 
-              </span>
-              <br />
-              <span>
-                2. The license plate occupies at least 5% of the image area.
-              </span>
-              <br />
-              <span>
-                3. The license plate is clearly visible, not obscured, not
-                overexposed, not poorly lit, and not deformed.
-              </span>
-              <br />
-              <span>
-                4. The image has in-plane rotations of the license plate no
-                greater than 30 degrees along the x-axis
-              </span>
-              <br />
-              <span>
-                5. The license plate follows the standard format of Vietnamese
-                vehicle plates.
-              </span>
-              <br />
-            </span>
-          </div>
+        {% endif %} {% if error %}
+        <!-- Error Display -->
+        <div
+          class="home-container15"
+          style="
+            border-color: rgba(239, 68, 68, 0.5);
+            background: linear-gradient(
+              135deg,
+              rgba(239, 68, 68, 0.15) 0%,
+              rgba(239, 68, 68, 0.1) 100%
+            );
+          "
+        >
+          <span
+            class="home-text12"
+            style="color: #fca5a5; text-shadow: 0 0 30px rgba(239, 68, 68, 0.5)"
+            >{{error}}</span
+          >
         </div>
-      </div>
+        {% endif %}
+      </main>
+
+      <!-- Info Section -->
+      <section class="home-intro">
+        <!-- About -->
+        <div class="home-container16">
+          <h2 class="home-text14">Smart License Plate Recognition</h2>
+          <p class="home-text15">
+            Our AI-powered LPR system accurately and quickly recognizes
+            Vietnamese vehicle license plates using high-resolution imaging and
+            advanced deep learning algorithms. This solution supports parking
+            efficiency by facilitating faster entry and exit processes, reducing
+            wait times, and minimizing human intervention.
+          </p>
+        </div>
+
+        <!-- How to Use -->
+        <div class="home-container17">
+          <h2 class="home-text16">How to Use</h2>
+          <p class="home-text17">
+            <span class="home-text18">1.</span> Click "Choose File" and select
+            an image of the license plate<br />
+            <span class="home-text18">2.</span> Click "Recognize" to process<br />
+            <span class="home-text18">3.</span> View the detected plate number
+            and processing time
+          </p>
+          <p class="home-text26">
+            The system will display the image with a bounding box around the
+            detected license plate.
+          </p>
+        </div>
+
+        <!-- Constraints -->
+        <div class="home-container18">
+          <h2 class="home-text27">Requirements</h2>
+          <p class="home-text28">
+            • Image resolution: 1920×1080 (Full HD) recommended<br />
+            • License plate: At least 5% of image area<br />
+            • Visibility: Clear, not obscured or overexposed<br />
+            • Rotation: In-plane rotation ≤ 30 degrees<br />
+            • Format: Standard Vietnamese vehicle plates
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer with Team Info -->
+      <footer class="home-footer">
+        <div class="footer-content">
+          <h3 class="footer-title">Development Team</h3>
+          <div class="team-grid">
+            <div class="team-member">
+              <span class="member-name">Nguyễn Minh Lộc</span>
+              <span class="member-id">22520791</span>
+            </div>
+            <div class="team-member">
+              <span class="member-name">Huỳnh Chấn Kiệt</span>
+              <span class="member-id">22520717</span>
+            </div>
+            <div class="team-member">
+              <span class="member-name">Nguyễn Viết Anh Minh</span>
+              <span class="member-id">22520880</span>
+            </div>
+          </div>
+          <p class="footer-instructor">
+            Teacher Instruction: ThS. Cáp Phạm Đình Thăng
+          </p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
-
-
-
-<!--
-<!doctype html>
-<title>Upload new File</title>
-<h1>Upload new File</h1>
-<form method=post enctype=multipart/form-data>
-  <input type=file name=file>
-  <input type=submit value=Upload>
-</form>
-{% if filename %}
-<h2>Uploaded Image:</h2>
-<img src="static/upload.jpg">
-<img src="static/result.jpg" alt="uploaded image">
-<h1> {{runtime}} </h1>
-<h1> {{lp}} </h1>
-{% endif %}
--->
