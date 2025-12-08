@@ -16,9 +16,10 @@
 
 This project aims to build a web application for recognizing Vietnamese license plates, using efficient deep-learning algorithms for accurate and rapid recognition. This system can work on 2 types of license plate in Vietnam, 1 line plates and 2 lines plates.
 
-<img width="700" alt="shortlp" src="https://github.com/cnmeow/Vietnamese-license-plate-recognition/assets/73975520/ced357e1-e967-4982-ab53-ad70929729f6">
+<img width="1000" alt="shortlp" src="https://github.com/user-attachments/assets/e7a78138-d924-4035-a685-12385334b02f">
 
 ## Features
+
 
 - Detect license plates in images
 - Recognize characters on Vietnamese license plates
@@ -60,7 +61,8 @@ python main.py
 
 - Open your web browser and go to `localhost:4000`.
 
-  <img width="700" alt="index" src="https://github.com/cnmeow/Vietnamese-license-plate-recognition/assets/73975520/85e28ce8-180e-4211-a362-9058aa9d0f31">
+  <img width="900" alt="index" src="https://github.com/user-attachments/assets/bb5991d9-8f72-4932-80d7-b974166b6724">
+
 
 - Click `Choose File` button, select the image of the license plate you want to recognize
 - Click the `Recognize` button to process the recognition.
