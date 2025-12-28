@@ -10,7 +10,7 @@ Cấu hình đánh giá:
 - Model: YOLOv5m
 - Image Size: 320x320
 - Conf Threshold: 0.001
-- IoU Threshold: 0.6
+- IoU Threshold (NMS): 0.6 (Ngưỡng loại bỏ trùng lặp)
 
 **Kết quả (từ quá trình huấn luyện - best epoch):**
 
